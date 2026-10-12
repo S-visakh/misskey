@@ -13,6 +13,12 @@ import { MiNoteDraft } from './NoteDraft.js';
 
 // misskey-js の notificationTypes と同期すべし
 export type MiNotification = {
+	type: 'eventReminder';
+	id: string;
+	createdAt: string;
+	notifierId: MiUser['id'];
+	noteId: MiNote['id'];
+} | {
 	type: 'note';
 	id: string;
 	createdAt: string;
